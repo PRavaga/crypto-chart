@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{D46D236D-9DE0-48F3-998F-76BD47DCE06F}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoCoins.UWP</RootNamespace>
+    <AssemblyName>CryptoCoins.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>CryptoCoins.UWP_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>78D2A20B25696DA5B29791FE7C04CFDBA52702E9</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac">
+      <Version>4.6.2</Version>
+    </PackageReference>
+    <PackageReference Include="Autofac.Extras.CommonServiceLocator">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="HockeySDK.UWP">
+      <Version>4.1.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Services.Store.Engagement">
+      <Version>10.1711.28001</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Connectivity">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Services">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <!-- Nuget package references -->
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Nito.AsyncEx">
+      <Version>5.0.0-pre-05</Version>
+    </PackageReference>
+    <PackageReference Include="Nito.Disposables">
+      <Version>1.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Nito.Mvvm.Async">
+      <Version>1.0.0-pre-03</Version>
+    </PackageReference>
+    <PackageReference Include="QueryString.NET">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.166-beta</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Template10-Validation">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.21.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ChartRenderer.cs" />
+    <Compile Include="Helpers\ExceptionExtensions.cs" />
+    <Compile Include="Helpers\IOHelper.cs" />
+    <Compile Include="Helpers\Logging\ExceptionsExtensions.cs" />
+    <Compile Include="Helpers\FormatHelper.cs" />
+    <Compile Include="Helpers\Logging\InMemoryLogTarget.cs" />
+    <Compile Include="Helpers\ReentrancyMonitor.cs" />
+    <Compile Include="Models\Exceptions\Sync\SyncException.cs" />
+    <Compile Include="Models\Exceptions\Validation\InsufficientHoldingsException.cs" />
+    <Compile Include="Models\Extensions\AlertModelEx.cs" />
+    <Compile Include="Models\Extensions\PortfolioManager.cs" />
+    <Compile Include="Models\Services\Api\CoinmarketcapApi.cs" />
+    <Compile Include="Models\Services\Api\DonationsApi.cs" />
+    <Compile Include="Models\Services\Api\Exceptions\NoDataForCurrencyException.cs" />
+    <Compile Include="Models\Services\Entries\Compare\HoldingsSummarieEqualityComparer.cs" />
+    <Compile Include="Models\Services\Entries\Compare\LambdaEqualable.cs" />
+    <Compile Include="Models\Services\Entries\Сoinmarketcap\CryptoCurrencyInfo.cs" />
+    <Compile Include="Models\Services\Portfolio\IHoldingsProvider.cs" />
+    <Compile Include="Models\Services\Sync\SyncService.cs" />
+    <Compile Include="Models\Services\Sync\SyncStatus.cs" />
+    <Compile Include="Models\StorageEntities\CryptoPortfolio.cs" />
+    <Compile Include="Models\StorageEntities\HoldingsChanging.cs" />
+    <Compile Include="Models\UserPreferences\HoldingsService.cs" />
+    <Compile Include="Models\Services\Api\ApiExtensions.cs" />
+    <Compile Include="Models\Services\Api\Entities\ErrorResponse.cs" />
+    <Compile Include="Models\Services\DialogService.cs" />
+    <Compile Include="Models\Services\Entries\ColorWrapper.cs" />
+    <Compile Include="Models\Services\Entries\Compare\LambdaComparer.cs" />
+    <Compile Include="Models\Services\Entries\CryptoWalletInfo.cs" />
+    <Compile Include="Models\Services\Entries\DataState.cs" />
+    <Compile Include="Models\Services\Entries\NewsModel.cs" />
+    <Compile Include="Models\Services\Entries\NewsSource.cs" />
+    <Compile Include="Models\Services\IBitmapProvider.cs" />
+    <Compile Include="Models\Services\NewsService.cs" />
+    <Compile Include="Models\StorageEntities\AlertFrequency.cs" />
+    <Compile Include="Models\StorageEntities\AlertModel.cs" />
+    <Compile Include="Models\StorageEntities\AlertTargetMode.cs" />
+    <Compile Include="Models\StorageEntities\CurrencyHoldings.cs" />
+    <Compile Include="Models\Services\ProgressState.cs" />
+    <Compile Include="Models\Services\AppVersionMigrationService.cs" />
+    <Compile Include="Models\StorageEntities\HoldingsSummary.cs" />
+    <Compile Include="Models\StorageEntities\HoldingsTransaction.cs" />
+    <Compile Include="Models\StorageEntities\TransactionType.cs" />
+    <Compile Include="Models\UserPreferences\DisplayPreference.cs" />
+    <Compile Include="Models\UserPreferences\HoldingsStorage.cs" />
+    <Compile Include="Models\UserPreferences\HoldingsUpdatedEventArg.cs" />
+    <Compile Include="Models\UserPreferences\PreferencesUpdatedEventArg.cs" />
+    <Compile Include="Models\UserPreferences\ResetableSQLiteAsyncConnection.cs" />
+    <Compile Include="Models\UserPreferences\SqLiteConnectionProvider.cs" />
+    <Compile Include="Models\UserPreferences\SummaryChangedEventArgs.cs" />
+    <Compile Include="Models\UserPreferences\TransactionChangedEventArgs.cs" />
+    <Compile Include="Models\UserPreferences\UpdateAction.cs" />
+    <Compile Include="Platform\Activation\ActivationHandler.cs" />
+    <Compile Include="Platform\AppInfoHelper.cs" />
+    <Compile Include="Platform\Attached\TextBlockEx.cs" />
+    <Compile Include="Platform\BackgroundTasks\AlertsUpdateTask.cs" />
+    <Compile Include="Platform\BackgroundTasks\BackgroundTask.cs" />
+    <Compile Include="Platform\BackgroundTasks\DeviceContextLostException.cs" />
+    <Compile Include="Platform\BackgroundTasks\PortfolioTileGenerator.cs" />
+    <Compile Include="Platform\BackgroundTasks\SyncBackgroundTask.cs" />
+    <Compile Include="Platform\BackgroundTasks\TileGenerator.cs" />
+    <Compile Include="Platform\BackgroundTasks\TileUpdateTask.cs" />
+    <Compile Include="Helpers\CollectionExtension.cs" />
+    <Compile Include="Helpers\IEqualityUpdater.cs" />
+    <Compile Include="Helpers\Json.cs" />
+    <Compile Include="Helpers\Observable.cs" />
+    <Compile Include="Helpers\QueryString\InlineQueryParameterAttribute.cs" />
+    <Compile Include="Helpers\QueryString\QueryHelper.cs" />
+    <Compile Include="Helpers\QueryString\QueryParameterListAttribute.cs" />
+    <Compile Include="Helpers\QueryString\QueryParameterAttribute.cs" />
+    <Compile Include="Helpers\QueryString\QueryParameterBaseAttribute.cs" />
+    <Compile Include="Helpers\QueryString\QueryParameterMapAttribute.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Models\Services\ActivationService.cs" />
+    <Compile Include="Platform\Activation\DefaultLaunchActivationHandler.cs" />
+    <Compile Include="Models\Services\Api\ApiServiceBase.cs" />
+    <Compile Include="Models\Services\Api\CryptoApi.cs" />
+    <Compile Include="Models\Services\Api\Entities\CoinInfo.cs" />
+    <Compile Include="Models\Services\Api\Entities\CoinsResponse.cs" />
+    <Compile Include="Models\Services\Api\Entities\ConversionInfo.cs" />
+    <Compile Include="Models\Services\Api\Entities\ConversionResponse.cs" />
+    <Compile Include="Models\Services\Api\Entities\HistoryItem.cs" />
+    <Compile Include="Models\Services\Api\Entities\HistoryResponse.cs" />
+    <Compile Include="Models\Services\Api\Entities\Request\ConversionRequest.cs" />
+    <Compile Include="Models\Services\Api\Entities\Request\HistoryRequest.cs" />
+    <Compile Include="Models\Services\Api\Exceptions\ApiException.cs" />
+    <Compile Include="Models\Services\Api\Exceptions\NetworkException.cs" />
+    <Compile Include="Models\Services\Api\Exceptions\NoInternetException.cs" />
+    <Compile Include="Models\Services\Api\Exceptions\ServerException.cs" />
+    <Compile Include="Models\Services\BackgroundTaskService.cs" />
+    <Compile Include="Models\Services\CryptoService.cs" />
+    <Compile Include="Models\Services\Entries\Compare\ConversionDirectionEqualityComparer.cs" />
+    <Compile Include="Models\Services\Entries\Compare\CurrencyPairEqualityUpdater.cs" />
+    <Compile Include="Models\Services\Entries\ConversionInfo.cs" />
+    <Compile Include="Models\Services\Entries\CryptoCurrencyInfo.cs" />
+    <Compile Include="Models\Services\Entries\DetailedConversionInfo.cs" />
+    <Compile Include="Models\Services\LiveTileService.cs" />
+    <Compile Include="Models\Services\NavigationService.cs" />
+    <Compile Include="Models\Services\OnBackgroundEnteringEventArgs.cs" />
+    <Compile Include="Models\Services\ProgressService.cs" />
+    <Compile Include="Models\UserPreferences\ConversionPreference.cs" />
+    <Compile Include="Models\UserPreferences\CurrencyPreference.cs" />
+    <Compile Include="Models\UserPreferences\FeaturedPreference.cs" />
+    <Compile Include="Platform\Behaviors\NewsSelectBehavior.cs" />
+    <Compile Include="Platform\Behaviors\SelectBehavior.cs" />
+    <Compile Include="Platform\Behaviors\SelectionEventArgs.cs" />
+    <Compile Include="Platform\Behaviors\VisualStateBehavior.cs" />
+    <Compile Include="Platform\BindingProxy.cs" />
+    <Compile Include="Platform\Collection\CollectionWatcher.cs" />
+    <Compile Include="Platform\Collection\FilterCollection.cs" />
+    <Compile Include="Platform\Collection\SortedList.cs" />
+    <Compile Include="Platform\Converters\EnumConverter.cs" />
+    <Compile Include="Platform\Converters\IntConverter.cs" />
+    <Compile Include="Platform\Converters\LocalizedEnumConverter.cs" />
+    <Compile Include="Platform\Converters\LocalizeStringConverter.cs" />
+    <Compile Include="Platform\Converters\NumberSignToObjectConverter.cs" />
+    <Compile Include="Platform\Converters\NumberToColorConverter.cs" />
+    <Compile Include="Platform\Converters\RadioConverter.cs" />
+    <Compile Include="Platform\Converters\StringToUriConverter.cs" />
+    <Compile Include="Platform\CurrencyHelper.cs" />
+    <Compile Include="Platform\DescriptionWrapper.cs" />
+    <Compile Include="Platform\Dialogs\IDialogController.cs" />
+    <Compile Include="Platform\Dialogs\MvvmContentDialog.cs" />
+    <Compile Include="Platform\Extenstions\EnumerableEx.cs" />
+    <Compile Include="Platform\MetroLogFileTarget.cs" />
+    <Compile Include="Platform\ReorderEventArgs.cs" />
+    <Compile Include="Platform\Selectors\HamburgerItemSelector.cs" />
+    <Compile Include="Platform\Selectors\ItemsDataTemplateSelector.cs" />
+    <Compile Include="Platform\SelectWrapper.cs" />
+    <Compile Include="Platform\StateTrigger\DeviceFamilyTrigger.cs" />
+    <Compile Include="Platform\StateTrigger\DisplaySizeTrigger.cs" />
+    <Compile Include="Platform\StorageService.cs" />
+    <Compile Include="Models\Services\SuspendAndResumeService.cs" />
+    <Compile Include="Models\Services\SuspensionState.cs" />
+    <Compile Include="Models\Services\ThemeSelectorService.cs" />
+    <Compile Include="Models\UserPreferences\CryptoCurrencyPreference.cs" />
+    <Compile Include="Models\UserPreferences\UserPreferencesService.cs" />
+    <Compile Include="Styles\Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AlertsViewModel.cs" />
+    <Compile Include="ViewModels\CoinInfoWebViewModel.cs" />
+    <Compile Include="ViewModels\CoinsViewModel.cs" />
+    <Compile Include="ViewModels\Common\DialogVIewModelBase.cs" />
+    <Compile Include="ViewModels\Common\ViewModelBase.cs" />
+    <Compile Include="ViewModels\Converters\HoldingsConverter.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\Entities\HoldingsSummary.cs" />
+    <Compile Include="ViewModels\AlertDialogViewModel.cs" />
+    <Compile Include="ViewModels\Entities\HoldingsTransaction.cs" />
+    <Compile Include="ViewModels\Entities\SpendingsSummary.cs" />
+    <Compile Include="ViewModels\Entities\SummarySnapshot.cs" />
+    <Compile Include="ViewModels\Entities\TransactionType.cs" />
+    <Compile Include="ViewModels\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\NewsFeedViewModel.cs" />
+    <Compile Include="ViewModels\NewsWebViewModel.cs" />
+    <Compile Include="ViewModels\PortfolioViewModel.cs" />
+    <Compile Include="ViewModels\SupportUsViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\ShellNavigationItem.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\AlertsPage.xaml.cs">
+      <DependentUpon>AlertsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoinInfoWebPage.xaml.cs">
+      <DependentUpon>CoinInfoWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoinsPage.xaml.cs">
+      <DependentUpon>CoinsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\BarPanel.cs" />
+    <Compile Include="Views\Controls\ChangeIndicator.xaml.cs">
+      <DependentUpon>ChangeIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ListSelect.cs" />
+    <Compile Include="Views\Controls\ListSelectItem.cs" />
+    <Compile Include="Views\Controls\NumericTextBox.cs" />
+    <Compile Include="Views\Controls\UniformGrid.cs" />
+    <Compile Include="Views\DashboardPage.xaml.cs">
+      <DependentUpon>DashboardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Entities\AlertCoinNameLookup.cs" />
+    <Compile Include="Views\Entities\AlertFilterDescriptor.cs" />
+    <Compile Include="Views\Entities\ChangeLookup.cs" />
+    <Compile Include="Views\Entities\FixedLabelFormatter.cs" />
+    <Compile Include="Views\Entities\AlertTargetValueLookup.cs" />
+    <Compile Include="Views\Entities\HoldingsRateLookup.cs" />
+    <Compile Include="Views\Entities\ValueRange.cs" />
+    <Compile Include="Views\Entities\UnwrapParameterCommand.cs" />
+    <Compile Include="Views\Entities\ValueLookup.cs" />
+    <Compile Include="Views\Entities\QuantityLookup.cs" />
+    <Compile Include="Views\Entities\CoinNameLookup.cs" />
+    <Compile Include="Views\AlertDialog.xaml.cs">
+      <DependentUpon>AlertDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Formatter\Alert.cs" />
+    <Compile Include="Views\Formatter\Bool.cs" />
+    <Compile Include="Views\Formatter\Currency.cs" />
+    <Compile Include="Views\Formatter\DateTime.cs" />
+    <Compile Include="Views\Formatter\Tile.cs" />
+    <Compile Include="Views\Formatter\Transaction.cs" />
+    <Compile Include="Views\Formatter\Value.cs" />
+    <Compile Include="Views\TransactionDialog.xaml.cs">
+      <DependentUpon>TransactionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsFeedPage.xaml.cs">
+      <DependentUpon>NewsFeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsWebPage.xaml.cs">
+      <DependentUpon>NewsWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PortfolioPage.xaml.cs">
+      <DependentUpon>PortfolioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupportUsPage.xaml.cs">
+      <DependentUpon>SupportUsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MvvmPage.cs" />
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellPage.xaml.cs">
+      <DependentUpon>ShellPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Telerik\KeyLookup\TransactionDateLookup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-us\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ResourceExtensions.cs" />
+    <Compile Include="Helpers\Singleton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\Alert.scale-100.png" />
+    <Content Include="Assets\Images\Alert.scale-125.png" />
+    <Content Include="Assets\Images\Alert.scale-150.png" />
+    <Content Include="Assets\Images\Alert.scale-200.png" />
+    <Content Include="Assets\Images\Alert.scale-400.png" />
+    <Content Include="Assets\Images\AlertBig.scale-100.png" />
+    <Content Include="Assets\Images\AlertBig.scale-125.png" />
+    <Content Include="Assets\Images\AlertBig.scale-150.png" />
+    <Content Include="Assets\Images\AlertBig.scale-200.png" />
+    <Content Include="Assets\Images\AlertBig.scale-400.png" />
+    <Content Include="Assets\Images\Chart.scale-100.png" />
+    <Content Include="Assets\Images\Chart.scale-125.png" />
+    <Content Include="Assets\Images\Chart.scale-150.png" />
+    <Content Include="Assets\Images\Chart.scale-200.png" />
+    <Content Include="Assets\Images\Chart.scale-400.png" />
+    <Content Include="Assets\Images\Coins.scale-100.png" />
+    <Content Include="Assets\Images\Coins.scale-125.png" />
+    <Content Include="Assets\Images\Coins.scale-150.png" />
+    <Content Include="Assets\Images\Coins.scale-200.png" />
+    <Content Include="Assets\Images\Coins.scale-400.png" />
+    <Content Include="Assets\Images\CoinTemplate.scale-100.png" />
+    <Content Include="Assets\Images\CoinTemplate.scale-125.png" />
+    <Content Include="Assets\Images\CoinTemplate.scale-150.png" />
+    <Content Include="Assets\Images\CoinTemplate.scale-200.png" />
+    <Content Include="Assets\Images\CoinTemplate.scale-400.png" />
+    <Content Include="Assets\Images\Dashboard.scale-100.png" />
+    <Content Include="Assets\Images\Dashboard.scale-125.png" />
+    <Content Include="Assets\Images\Dashboard.scale-150.png" />
+    <Content Include="Assets\Images\Dashboard.scale-200.png" />
+    <Content Include="Assets\Images\Dashboard.scale-400.png" />
+    <Content Include="Assets\Images\FiatTemplate.scale-100.png" />
+    <Content Include="Assets\Images\FiatTemplate.scale-125.png" />
+    <Content Include="Assets\Images\FiatTemplate.scale-150.png" />
+    <Content Include="Assets\Images\FiatTemplate.scale-200.png" />
+    <Content Include="Assets\Images\FiatTemplate.scale-400.png" />
+    <Content Include="Assets\Images\Grid.scale-100.png" />
+    <Content Include="Assets\Images\Grid.scale-125.png" />
+    <Content Include="Assets\Images\Grid.scale-150.png" />
+    <Content Include="Assets\Images\Grid.scale-200.png" />
+    <Content Include="Assets\Images\Grid.scale-400.png" />
+    <Content Include="Assets\Images\News.scale-100.png" />
+    <Content Include="Assets\Images\News.scale-125.png" />
+    <Content Include="Assets\Images\News.scale-150.png" />
+    <Content Include="Assets\Images\News.scale-200.png" />
+    <Content Include="Assets\Images\News.scale-400.png" />
+    <Content Include="Assets\Images\NewsBig.scale-100.png" />
+    <Content Include="Assets\Images\NewsBig.scale-125.png" />
+    <Content Include="Assets\Images\NewsBig.scale-150.png" />
+    <Content Include="Assets\Images\NewsBig.scale-200.png" />
+    <Content Include="Assets\Images\NewsBig.scale-400.png" />
+    <Content Include="Assets\Images\Portfolio.scale-100.png" />
+    <Content Include="Assets\Images\Portfolio.scale-125.png" />
+    <Content Include="Assets\Images\Portfolio.scale-150.png" />
+    <Content Include="Assets\Images\Portfolio.scale-200.png" />
+    <Content Include="Assets\Images\Portfolio.scale-400.png" />
+    <Content Include="Assets\Images\PortfolioBig.scale-100.png" />
+    <Content Include="Assets\Images\PortfolioBig.scale-125.png" />
+    <Content Include="Assets\Images\PortfolioBig.scale-150.png" />
+    <Content Include="Assets\Images\PortfolioBig.scale-200.png" />
+    <Content Include="Assets\Images\PortfolioBig.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <None Include="Binaries\Telerik.Core.pri" />
+    <None Include="Binaries\Telerik.Data.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Chart.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\DataForm.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\Listbox.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\Resources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\Resources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Calendar.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\CommonResources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Resources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP.pri" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\Generic.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\HubTilePalette.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\Resources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\SharedResources.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsLight.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesDark.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesHighContrast.xbf" />
+    <None Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesLight.xbf" />
+    <None Include="CryptoCoins.UWP_StoreKey.pfx" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Binaries\Telerik.Core.dll" />
+    <Content Include="Binaries\Telerik.Core.pdb" />
+    <Content Include="Binaries\Telerik.Core.XML" />
+    <Content Include="Binaries\Telerik.Core\Properties\default.rd.xml" />
+    <Content Include="Binaries\Telerik.Data.dll" />
+    <Content Include="Binaries\Telerik.Data.pdb" />
+    <Content Include="Binaries\Telerik.Data.XML" />
+    <Content Include="Binaries\Telerik.Data\Properties\default.rd.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Chart.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Chart.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Chart.UWP\CustomDictionary.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Telerik.UI.Xaml.Chart.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Chart.XML" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\ListView\Resources\reorder-handle-dark.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\ListView\Resources\reorder-handle-light.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Telerik.UI.Xaml.Controls.Data.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Controls.Data.XML" />
+    <Content Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Telerik.UI.Xaml.DataVisualization.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.DataVisualization.XML" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down_white.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down_white.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down_white.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\FilterFlyout\ic_arrow_down_white.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn_blue.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn_blue.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn_blue.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\close_btn_blue.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn_blue.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn_blue.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn_blue.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\column_chooser_btn_blue.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_dark.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_dark.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_dark.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_dark.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_light.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_light.scale-140.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_light.scale-180.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Assets\Reorder\ic_reorder_light.scale-240.png" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Telerik.UI.Xaml.Grid.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Grid.XML" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Input.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Input.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Input.UWP\Telerik.UI.Xaml.Input.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Input.XML" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Primitives.UWP.dll" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Primitives.UWP.pdb" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Telerik.UI.Xaml.Primitives.UWP.xr.xml" />
+    <Content Include="Binaries\Telerik.UI.Xaml.Primitives.XML" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="CryptoCoins.UWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Chart.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\DataForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\Listbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Controls.Data.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.DataVisualization.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Grid.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\CommonResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Input.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\HubTilePalette.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\SharedResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeColorsLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesHighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Binaries\Telerik.UI.Xaml.Primitives.UWP\Themes\ThemeResourcesLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Styles.DeviceFamily-Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TelerikStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\_Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\_Mics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\_FontSizes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\_Thickness.DeviceFamily-Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\_Thickness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AlertsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CoinInfoWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CoinsPage.DeviceFamily-Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CoinsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\ChangeIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardPage.DeviceFamily-Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AlertDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransactionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsFeedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PortfolioPage.DeviceFamily-Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PortfolioPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupportUsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShellPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Services.Store.Engagement, Version=10.0">
+      <Name>Microsoft Engagement Framework</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MetroLog, Version=1.0.1.0, Culture=neutral, PublicKeyToken=ba4ace74c3b410f3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MetroLog\MetroLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\External\AppCenter\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\External\AppCenter\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Push">
+      <HintPath>..\External\AppCenter\Microsoft.AppCenter.Push.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Data, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.Chart.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.Chart.UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.Controls.Data.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.Controls.Data.UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.DataVisualization.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.DataVisualization.UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.Grid.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.Grid.UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.Input.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.Input.UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.UI.Xaml.Primitives.UWP, Version=0.0.0.0, Culture=neutral, PublicKeyToken=da696acf63be444a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Telerik.UI.Xaml.Primitives.UWP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

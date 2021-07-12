@@ -1,0 +1,16 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">    
+
+    <!--Custom size margins-->
+    <Thickness x:Key="PageTitleMargin">0,15,0,7</Thickness>
+    <Thickness x:Key="PageTitleFullMargin">24,15,24,7</Thickness>
+    <Thickness x:Key="PageTitleNarrowMargin">48,15,0,7</Thickness>
+    <Thickness x:Key="PageTitleNarrowFullMargin">72,15,24,7</Thickness>
+    <Thickness x:Key="PageTitleDeltaMargin">48,0,0,0</Thickness>
+
+    <!--Medium size margins-->
+    <Thickness x:Key="LeftRightMargin">24,0,24,0</Thickness>
+    <Thickness x:Key="LeftTopRightBottomMargin">24,24,24,24</Thickness>
+
+</ResourceDictionary>

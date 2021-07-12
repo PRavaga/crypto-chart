@@ -1,0 +1,57 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <Color x:Key="ChartUpFillColor">#e5faf0</Color>
+            <Color x:Key="ChartDownFillColor">#ffecec</Color>
+            <Color x:Key="ChartUpStrokeColor">#00cc6a</Color>
+            <Color x:Key="ChartDownStrokeColor">#ff4343</Color>
+            <Color x:Key="ConversionListHeaderBackgroundColor">#f2f2f2</Color>
+            <Color x:Key="ConversionListOddBackgroundColor">#fafafa</Color>
+            <Color x:Key="PaneBackgroundColor">#F2F2F2</Color>
+            <Color x:Key="ContentBackgroundColor">#ffffff</Color>
+            <Color x:Key="InvestmentsFillColor">#F4F4F4</Color>
+            <SolidColorBrush x:Key="ConversionTileBackgroundBrush" Color="Transparent"/>
+            <SolidColorBrush x:Key="ConversionTileBorderBrush" Color="#d9d9d9"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <Color x:Key="ChartUpFillColor">#30443b</Color>
+            <Color x:Key="ChartDownFillColor">#4a3636</Color>
+            <Color x:Key="ChartUpStrokeColor">#00cc6a</Color>
+            <Color x:Key="ChartDownStrokeColor">#ff4343</Color>
+            <Color x:Key="ConversionListHeaderBackgroundColor">#0d0d0d</Color>
+            <Color x:Key="ConversionListOddBackgroundColor">#1a1a1a</Color>
+            <Color x:Key="PaneBackgroundColor">#151515</Color>
+            <Color x:Key="ContentBackgroundColor">#1E1E1E</Color>
+            <Color x:Key="InvestmentsFillColor">#3B3B3B</Color>
+            <SolidColorBrush x:Key="ConversionTileBackgroundBrush" Color="#353535"/>
+            <SolidColorBrush x:Key="ConversionTileBorderBrush" Color="#4a4a4a"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="HighContrast">
+            <Color x:Key="ChartUpFillColor">#30443b</Color>
+            <Color x:Key="ChartDownFillColor">#4a3636</Color>
+            <Color x:Key="ChartUpStrokeColor">#00cc6a</Color>
+            <Color x:Key="ChartDownStrokeColor">#ff4343</Color>
+            <Color x:Key="ConversionListHeaderBackgroundColor">#0d0d0d</Color>
+            <Color x:Key="ConversionListOddBackgroundColor">#1a1a1a</Color>
+            <Color x:Key="PaneBackgroundColor">#151515</Color>
+            <Color x:Key="ContentBackgroundColor">#1E1E1E</Color>
+            <Color x:Key="InvestmentsFillColor">#3B3B3B</Color>
+            <SolidColorBrush x:Key="ConversionTileBackgroundBrush" Color="#353535"/>
+            <SolidColorBrush x:Key="ConversionTileBorderBrush" Color="#4a4a4a"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    <Color x:Key="ChartZeroStrokeColor">DodgerBlue</Color>
+    <Color x:Key="ChartZeroFillColor">LightSkyBlue</Color>
+    <SolidColorBrush x:Key="CheckedStarBrush" Color="#ffc600"/>
+    <SolidColorBrush x:Key="UncheckedStarBrush" Color="#d7d7d7"/>
+    <SolidColorBrush x:Key="ChartUpStrokeBrush" Color="{ThemeResource ChartUpStrokeColor}"/>
+    <SolidColorBrush x:Key="ChartDownStrokeBrush" Color="{ThemeResource ChartDownStrokeColor}"/>
+    <SolidColorBrush x:Key="ChartZeroStrokeBrush" Color="{StaticResource ChartZeroStrokeColor}"/>
+    <SolidColorBrush x:Key="ConversionListHeaderBackgroundBrush" Color="{ThemeResource ConversionListHeaderBackgroundColor}"/>
+    <SolidColorBrush x:Key="ConversionListOddBackgroundBrush" Color="{ThemeResource ConversionListOddBackgroundColor}"/>
+    <SolidColorBrush x:Key="PaneBackgroundBrush" Color="{ThemeResource PaneBackgroundColor}"/>
+    <SolidColorBrush x:Key="ContentBackgroundBrush" Color="{ThemeResource ContentBackgroundColor}"/>
+    <SolidColorBrush x:Key="InvestmentsStrokeBrush" Color="#9A9A9A"/>
+</ResourceDictionary>

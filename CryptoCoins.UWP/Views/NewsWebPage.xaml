@@ -1,0 +1,91 @@
+﻿<local:MvvmPage
+    x:Class="CryptoCoins.UWP.Views.NewsWebPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CryptoCoins.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:CryptoCoins.UWP.Platform.Behaviors"
+    mc:Ignorable="d"
+    DataContext="{Binding NewsWeb, Source={StaticResource Locator}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <WebView x:Name="WebView" />
+
+        <CommandBar Grid.Row="1">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Uid="NewsWebPage_ShareButton" Command="{x:Bind ViewModel.ShareCommand}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="&#xE72D;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+
+
+        <StackPanel x:Name="UnavailableTemplate" Margin="0,0,0,48"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center" x:DeferLoadStrategy="Lazy"
+                    Visibility="Collapsed">
+            <BitmapIcon UriSource="/Assets/Images/NewsBig.png"
+                        Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}" Width="96"
+                        Height="96" HorizontalAlignment="Center" />
+            <TextBlock x:Uid="NewsWebPage_UnavailableTemplateLine1" HorizontalAlignment="Center" />
+            <TextBlock x:Uid="NewsWebPage_UnavailableTemplateLine2" HorizontalAlignment="Center" />
+            <Button x:Uid="PortfolioPage_TryAgainButton" Margin="0,12,0,0"
+                    Command="{x:Bind ViewModel.RefreshCommand}"
+                    HorizontalAlignment="Center" />
+        </StackPanel>
+        <controls:Loading x:Name="LoadingTemplate" VerticalAlignment="Center" HorizontalAlignment="Center"
+                          IsLoading="{x:Bind ViewModel.ProgressState.IsOperating, Mode=OneWay}"
+                          Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal">
+                <ProgressRing IsActive="True" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" />
+                <TextBlock x:Uid="NewsWebPage_Loading" Margin="12,0,0,0" VerticalAlignment="Center" />
+            </StackPanel>
+        </controls:Loading>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="DataState">
+                <VisualState x:Name="Available" />
+                <VisualState x:Name="Empty" />
+                <VisualState x:Name="Unavailable">
+                    <VisualState.Setters>
+                        <Setter Target="WebView.Visibility" Value="Collapsed" />
+
+                        <Setter Target="UnavailableTemplate.Visibility" Value="Visible" />
+                        <Setter Target="LoadingTemplate.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NotReady">
+                    <VisualState.Setters>
+                        <Setter Target="WebView.Visibility" Value="Collapsed" />
+
+                        <Setter Target="LoadingTemplate.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+    <interactivity:Interaction.Behaviors>
+        <behaviors:VisualStateBehavior Group="DataState"
+                                       State="{x:Bind ViewModel.DataState, Mode=OneWay, Converter={StaticResource EnumConverter}}" />
+    </interactivity:Interaction.Behaviors>
+</local:MvvmPage>

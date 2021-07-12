@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DashboardPage_Title.Text" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CoinsPage_Title.Text" xml:space="preserve">
+    <value>Coins</value>
+  </data>
+  <data name="SettingsPage_Title.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsPage_Theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="SettingsPage_ThemeDark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="SettingsPage_ThemeLight.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="SettingsPage_Copyright.Text" xml:space="preserve">
+    <value>© Copyright 2017</value>
+  </data>
+  <data name="Shell_CoinsPage" xml:space="preserve">
+    <value>Coins</value>
+  </data>
+  <data name="Shell_SettingsPage" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="DashboardPage_GridViewButton.Label" xml:space="preserve">
+    <value>Grid view</value>
+  </data>
+  <data name="DashboardPage_ListViewButton.Label" xml:space="preserve">
+    <value>List view</value>
+  </data>
+  <data name="DashboardPage_ChangeColumn.Text" xml:space="preserve">
+    <value>24h change</value>
+  </data>
+  <data name="DashboardPage_CoinColumn.Text" xml:space="preserve">
+    <value>Coin</value>
+  </data>
+  <data name="DashboardPage_PriceColumn.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="DashboardPage_VolumeColumn.Text" xml:space="preserve">
+    <value>24h volume</value>
+  </data>
+  <data name="SettingsPage_Currencies.Text" xml:space="preserve">
+    <value>Сurrency pair</value>
+  </data>
+  <data name="SettingsPage_ThemeDefault.Content" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_3Months" xml:space="preserve">
+    <value>3 Months</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_6Months" xml:space="preserve">
+    <value>6 Months</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="SettingsPage_ChartTimeFrame_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="SupportUsPage_CopyButton.Content" xml:space="preserve">
+    <value>Copy address</value>
+  </data>
+  <data name="SupportUsPage_Currency.Header" xml:space="preserve">
+    <value>Donate with</value>
+  </data>
+  <data name="SupportUsPage_Thanks.Text" xml:space="preserve">
+    <value>Thank you for your support!</value>
+  </data>
+  <data name="SupportUsPage_Title.Text" xml:space="preserve">
+    <value>Support us</value>
+  </data>
+  <data name="Shell_SupportUsPage" xml:space="preserve">
+    <value>Support Us</value>
+  </data>
+  <data name="Shell_WalletPage" xml:space="preserve">
+    <value>Wallet (soon)</value>
+  </data>
+  <data name="DashboardPage_ConversionEmpty.Text" xml:space="preserve">
+    <value>No charts to display</value>
+  </data>
+  <data name="DashboardPage_ConversionLoading.Text" xml:space="preserve">
+    <value>Loading coins</value>
+  </data>
+  <data name="DashboardPage_ConversionUnavailable.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable, please check your connection</value>
+  </data>
+  <data name="DashboardPage_FeaturedConversionLoading.Text" xml:space="preserve">
+    <value>Loading featured coins</value>
+  </data>
+  <data name="DashboardPage_SearchHint.PlaceholderText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="CoinsPage_SearchHint.PlaceholderText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="DashboardPage_ConversionFilteredEmpty.Text" xml:space="preserve">
+    <value>No results</value>
+  </data>
+  <data name="Shell_DashboardPage" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="SettingsPage_Language.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsPage_LanguageChangedMessage" xml:space="preserve">
+    <value>Please restart the app to apply new language.</value>
+  </data>
+  <data name="SettingsPage_LanguageChangedOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SettingsPage_LanguageChangedWarningTitle" xml:space="preserve">
+    <value>Language has been changed</value>
+  </data>
+  <data name="SettingsPage_SystemDisplayLanguage" xml:space="preserve">
+    <value>System language</value>
+  </data>
+  <data name="DashboardPage_VolumeTemplate" xml:space="preserve">
+    <value>Vol: {0}</value>
+  </data>
+  <data name="DashboardPage_AllTab.Header" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="DashboardPage_FeaturedTab.Header" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="CoinsPage_FilterAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="CoinsPage_FilterDisabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="CoinsPage_FilterEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="CoinsPage_ShowingLabel.Text" xml:space="preserve">
+    <value>Showing</value>
+  </data>
+  <data name="SettingsPage_PoweredBy.Text" xml:space="preserve">
+    <value>Built with</value>
+  </data>
+  <data name="SettingsPage_PoweredByLink.NavigateUri" xml:space="preserve">
+    <value>https://www.cryptocompare.com/api</value>
+  </data>
+  <data name="SettingsPage_PoweredByLinkContent.Text" xml:space="preserve">
+    <value>CryptoCompare API</value>
+  </data>
+  <data name="SettingsPage_RateApp.Content" xml:space="preserve">
+    <value>Rate the app</value>
+  </data>
+  <data name="SettingsPage_RateAppCaption.Text" xml:space="preserve">
+    <value>Your review will help us to improve the product</value>
+  </data>
+  <data name="DashboardPage_TryAgainButton.Content" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="SettingsPage_ContactDeveloper.Content" xml:space="preserve">
+    <value>Get in touch</value>
+  </data>
+  <data name="SettingsPage_ContactDeveloperDescription.Text" xml:space="preserve">
+    <value>Say hi to devs</value>
+  </data>
+  <data name="DashboardPage_ContextMenuPinTile" xml:space="preserve">
+    <value>Pin to Start</value>
+  </data>
+  <data name="DashboardPage_ContextMenuUnpinTile" xml:space="preserve">
+    <value>Unpin from Start</value>
+  </data>
+  <data name="TransactionDialog_CancelButton.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TransactionDialog_CreateTitle" xml:space="preserve">
+    <value>Add transaction</value>
+  </data>
+  <data name="TransactionDialog_EditTitle" xml:space="preserve">
+    <value>Edit transaction</value>
+  </data>
+  <data name="TransactionDialog_RemoveButton.Content" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="TransactionDialog_SaveButton.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Shell_PortfolioPage" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="TransactionDialog_AmountInput.PlaceholderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="PortfolioPage_Holdings.Text" xml:space="preserve">
+    <value>Holdings</value>
+  </data>
+  <data name="PortfolioPage_Max" xml:space="preserve">
+    <value>Max {0}</value>
+  </data>
+  <data name="PortfolioPage_Min" xml:space="preserve">
+    <value>Min {0}</value>
+  </data>
+  <data name="PortfolioPage_AddCoin.Label" xml:space="preserve">
+    <value>Add Coin</value>
+  </data>
+  <data name="PortfolioPage_EmptyTemplateLine1.Text" xml:space="preserve">
+    <value>You don't have any holdings.</value>
+  </data>
+  <data name="PortfolioPage_EmptyTemplateLine2.Text" xml:space="preserve">
+    <value>Select + to add a coin.</value>
+  </data>
+  <data name="PortfolioPage_Loading.Text" xml:space="preserve">
+    <value>Loading data</value>
+  </data>
+  <data name="PortfolioPage_ToggleChartView.Label" xml:space="preserve">
+    <value>Chart View</value>
+  </data>
+  <data name="PortfolioPage_ToggleListView.Label" xml:space="preserve">
+    <value>List View</value>
+  </data>
+  <data name="PortfolioPage_UnavailableTemplateLine1.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable.</value>
+  </data>
+  <data name="PortfolioPage_UnavailableTemplateLine2.Text" xml:space="preserve">
+    <value>Please check your connection.</value>
+  </data>
+  <data name="PortfolioPage_ChangeColumn.Header" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="PortfolioPage_CoinColumn.Header" xml:space="preserve">
+    <value>Coin</value>
+  </data>
+  <data name="PortfolioPage_QuantityColumn.Header" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="PortfolioPage_ValueColumn.Header" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="PortfolioPage_Change.Text" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="PortfolioPage_Title.Text" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="TransactionDialog_BaseCurrencyInput.PlaceholderText" xml:space="preserve">
+    <value>Base currency</value>
+  </data>
+  <data name="SettingsPage_GiveFeedback.Content" xml:space="preserve">
+    <value>Feedback Hub</value>
+  </data>
+  <data name="SettingsPage_GiveFeedbackDescription.Text" xml:space="preserve">
+    <value>Share your suggestions</value>
+  </data>
+  <data name="PortfolioPage_TryAgainButton.Content" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="RateNotAvailable" xml:space="preserve">
+    <value>n/a</value>
+  </data>
+  <data name="PortfolioPage_ChangePercentLoading" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="AlertsPage_Title.Text" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="Shell_AlertsPage" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="AlertFrequency_EveryTime" xml:space="preserve">
+    <value>Every time</value>
+  </data>
+  <data name="AlertFrequency_OneTime" xml:space="preserve">
+    <value>One time</value>
+  </data>
+  <data name="AlertsPage_CoinColumn.Header" xml:space="preserve">
+    <value>Coin</value>
+  </data>
+  <data name="AlertsPage_DisableAll.Header" xml:space="preserve">
+    <value>Disable all alerts</value>
+  </data>
+  <data name="AlertsPage_FrequencyColumn.Header" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="AlertsPage_Search.PlaceholderText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="AlertsPage_StatusColumn.Header" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AlertsPage_TargetColumn.Header" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="AlertsPage_AddButton.Label" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AlertDialog_CreateTitle" xml:space="preserve">
+    <value>Add Alert</value>
+  </data>
+  <data name="AlertDialog_EditTItle" xml:space="preserve">
+    <value>Edit Alert</value>
+  </data>
+  <data name="AlertDialog_FrequencyLabel.Text" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="AlertDialog_Frequency_EveryTime.Content" xml:space="preserve">
+    <value>Every time</value>
+  </data>
+  <data name="AlertDialog_Frequency_OneTime.Content" xml:space="preserve">
+    <value>One time</value>
+  </data>
+  <data name="AlertDialog_TargetModeSelect.Header" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="AlertsPage_EmptyTemplateLine1.Text" xml:space="preserve">
+    <value>You don't have any alerts.</value>
+  </data>
+  <data name="AlertsPage_EmptyTemplateLine2.Text" xml:space="preserve">
+    <value>Select + to add alert.</value>
+  </data>
+  <data name="AlertsPage_FilteredEmptyTemplateLine1.Text" xml:space="preserve">
+    <value>No results were found.</value>
+  </data>
+  <data name="AlertsPage_FilteredEmptyTemplateLine2.Text" xml:space="preserve">
+    <value>Try changing search query.</value>
+  </data>
+  <data name="AlertsPage_Loading.Text" xml:space="preserve">
+    <value>Loading data</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_3Months" xml:space="preserve">
+    <value>3 M</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_6Months" xml:space="preserve">
+    <value>6 M</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="PortfolioPage_ChartTimeFrame_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="PortfolioPage_RateColumn.Header" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="AlertNotification_ContentAbove" xml:space="preserve">
+    <value>{0} is above {1}</value>
+  </data>
+  <data name="AlertNotification_Title" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="DateTime_DayAgo" xml:space="preserve">
+    <value>a day ago</value>
+  </data>
+  <data name="DateTime_DaysAgo" xml:space="preserve">
+    <value>{0} days ago</value>
+  </data>
+  <data name="DateTime_HourAgo" xml:space="preserve">
+    <value>an hour ago</value>
+  </data>
+  <data name="DateTime_HoursAgo" xml:space="preserve">
+    <value>{0} hours ago</value>
+  </data>
+  <data name="DateTime_JustNow" xml:space="preserve">
+    <value>Just now</value>
+  </data>
+  <data name="DateTime_MinuteAgo" xml:space="preserve">
+    <value>a minute ago</value>
+  </data>
+  <data name="DateTime_MinutesAgo" xml:space="preserve">
+    <value>{0} minutes ago</value>
+  </data>
+  <data name="DateTime_MonthAgo" xml:space="preserve">
+    <value>a month ago</value>
+  </data>
+  <data name="DateTime_MonthsAgo" xml:space="preserve">
+    <value>{0} months ago</value>
+  </data>
+  <data name="DateTime_YearAgo" xml:space="preserve">
+    <value>a year ago</value>
+  </data>
+  <data name="DateTime_YearsAgo" xml:space="preserve">
+    <value>{0} years ago</value>
+  </data>
+  <data name="NewsFeedPage_EmptyTemplateLine1.Text" xml:space="preserve">
+    <value>We don't have any news for you :(</value>
+  </data>
+  <data name="NewsFeedPage_EmptyTemplateLine2.Text" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="NewsFeedPage_Loading.Text" xml:space="preserve">
+    <value>Loading news</value>
+  </data>
+  <data name="NewsFeedPage_RefreshButton.Label" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="NewsFeedPage_Title.Text" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsFeedPage_UnavailableTemplateLine1.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable.</value>
+  </data>
+  <data name="NewsFeedPage_UnavailableTemplateLine2.Text" xml:space="preserve">
+    <value>Please check your connection.</value>
+  </data>
+  <data name="Shell_NewsPage" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsWebPage_Loading.Text" xml:space="preserve">
+    <value>Loading news</value>
+  </data>
+  <data name="NewsWebPage_UnavailableTemplateLine1.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable.</value>
+  </data>
+  <data name="NewsWebPage_UnavailableTemplateLine2.Text" xml:space="preserve">
+    <value>Please check your connection.</value>
+  </data>
+  <data name="PortfolioPage_PinToStartButton.Label" xml:space="preserve">
+    <value>Pin to Start</value>
+  </data>
+  <data name="AlertDialog_AmountField.PlaceholderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="AlertDialog_CancelButton.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="AlertDialog_CoinInput.PlaceholderText" xml:space="preserve">
+    <value>Coin</value>
+  </data>
+  <data name="AlertDialog_RemoveButton.Content" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="AlertDialog_SaveButton.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AlertNotification_ContentBelow" xml:space="preserve">
+    <value>{0} is below {1}</value>
+  </data>
+  <data name="DashboardPage_ShareRate.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="DashboardPage_ShareDescription" xml:space="preserve">
+    <value>Exchange rate and chart will be shared</value>
+  </data>
+  <data name="NewsWebPage_ShareButton.Label" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="NewsWebPage_ShareDescription" xml:space="preserve">
+    <value>News link will be shared</value>
+  </data>
+  <data name="NewsWebPage_ShareText" xml:space="preserve">
+    <value>{0} via Crypto Chart for Windows 10</value>
+  </data>
+  <data name="DashboardPage_ShareText" xml:space="preserve">
+    <value>{0} - {1} {2} via Crypto Chart for Windows 10</value>
+  </data>
+  <data name="DashboardPage_ShareTitle" xml:space="preserve">
+    <value>{0} - {1}</value>
+  </data>
+  <data name="NewsWebPage_ShareTitle" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="NewsFeedPage_ShareMenu.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="PortfolioPage_AirdropDescription_Base" xml:space="preserve">
+    <value>Acquired {0}</value>
+  </data>
+  <data name="PortfolioPage_BuyDescription_Base" xml:space="preserve">
+    <value>Purchased {0}</value>
+  </data>
+  <data name="PortfolioPage_CommentColumn.Header" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="PortfolioPage_Investments.Text" xml:space="preserve">
+    <value>Investments</value>
+  </data>
+  <data name="PortfolioPage_Roi.Text" xml:space="preserve">
+    <value>ROI</value>
+  </data>
+  <data name="PortfolioPage_SellDescription_Base" xml:space="preserve">
+    <value>Sold {0}</value>
+  </data>
+  <data name="PortfolioPage_TimeColumn.Header" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="PortfolioPage_ToggleHistoryView.Label" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="PortfolioPage_TransactionColumn.Header" xml:space="preserve">
+    <value>Transaction</value>
+  </data>
+  <data name="AlertsPage_ContextMenuCoinDetails" xml:space="preserve">
+    <value>{0} details</value>
+    <comment>BTC details</comment>
+  </data>
+  <data name="CoinsDetailsPage_Loading.Text" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="CoinsDetails_UnavailableTemplateLine1.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable.</value>
+  </data>
+  <data name="CoinsDetails_UnavailableTemplateLine2.Text" xml:space="preserve">
+    <value>Please check your connection.</value>
+  </data>
+  <data name="DashboardPage_ContextMenuCoinDetails" xml:space="preserve">
+    <value>{0} details</value>
+    <comment>BTC details</comment>
+  </data>
+  <data name="NewsFeedPage_ShowSourcesButton.Label" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="PortfolioPage_ContextMenuCoinDetails" xml:space="preserve">
+    <value>{0} details</value>
+    <comment>BTC details</comment>
+  </data>
+  <data name="SettingsPage_SyncButton.Content" xml:space="preserve">
+    <value>Sync now</value>
+  </data>
+  <data name="TransactionDialog_CommentInput.PlaceholderText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="TransactionDialog_CounterCurrencyInput.PlaceholderText" xml:space="preserve">
+    <value>Counter currency</value>
+  </data>
+  <data name="TransactionDialog_PriceInput.PlaceholderText" xml:space="preserve">
+    <value>Price per unit</value>
+  </data>
+  <data name="TransactionType_Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="TransactionType_Sell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="TransactionDialog_ValidationIncorrect" xml:space="preserve">
+    <value>Incorrect value</value>
+  </data>
+  <data name="TransactionDialog_ValidationInsufficientFunds" xml:space="preserve">
+    <value>Insufficient funds</value>
+  </data>
+  <data name="TransactionDialog_ValidationRequired" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="PortfolioPage_BuyDescription_Counter" xml:space="preserve">
+    <value>with {0}</value>
+  </data>
+  <data name="PortfolioPage_SellDescription_Counter" xml:space="preserve">
+    <value>for {0}</value>
+  </data>
+  <data name="TransactionDialog_ValidationDateInvalid" xml:space="preserve">
+    <value>Incorrect date</value>
+  </data>
+  <data name="PortfolioPage_RealizedProfitLabel.Text" xml:space="preserve">
+    <value>RP</value>
+  </data>
+  <data name="PortfolioPage_RealizedProfitPanel.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Realized profit</value>
+  </data>
+  <data name="PortfolioPage_RoiHeaderPanel.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Return on investment</value>
+  </data>
+  <data name="SettingsPage_AutoSyncToggle.Header" xml:space="preserve">
+    <value>Auto sync</value>
+  </data>
+  <data name="SettingsPage_SyncStatus_Failed" xml:space="preserve">
+    <value>Status: Failed {0}</value>
+  </data>
+  <data name="SettingsPage_SyncStatus_InProgress" xml:space="preserve">
+    <value>Status: In progress</value>
+  </data>
+  <data name="SettingsPage_SyncStatus_NotSynced" xml:space="preserve">
+    <value>Status: Not synced</value>
+  </data>
+  <data name="SettingsPage_SyncStatus_Succed" xml:space="preserve">
+    <value>Status: Synced {0}</value>
+  </data>
+  <data name="DashboardPage_RefreshButton.Label" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="TransactionType_AirDrop" xml:space="preserve">
+    <value>Acquisition</value>
+  </data>
+  <data name="NewsFeedPage_NewsSources.Label" xml:space="preserve">
+    <value>News sources</value>
+  </data>
+  <data name="CoinInfoWebPage_Loading.Text" xml:space="preserve">
+    <value>Loading currency</value>
+  </data>
+  <data name="CoinInfoWebPage_TryAgainButton.Content" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="CoinInfoWebPage_UnavailableTemplateLine1.Text" xml:space="preserve">
+    <value>Online service is temporarily unavailable.</value>
+  </data>
+  <data name="CoinInfoWebPage_UnavailableTemplateLine2.Text" xml:space="preserve">
+    <value>Please check your connection.</value>
+  </data>
+  <data name="DashboardPage_CoinInfo" xml:space="preserve">
+    <value>{0} info</value>
+    <comment>e.g. BTC info</comment>
+  </data>
+  <data name="SupportUsPage_Loading.Text" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="DashboardPage_ChartTimeFrameButton.Label" xml:space="preserve">
+    <value>Chart time frame</value>
+  </data>
+  <data name="PortfolioPage_ChangeHeaderPanel_Partial" xml:space="preserve">
+    <value>Some values are not available</value>
+  </data>
+</root>

@@ -1,0 +1,170 @@
+<views:MvvmPage
+    x:Class="CryptoCoins.UWP.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:views="using:CryptoCoins.UWP.Views"
+    xmlns:userPreferences="using:CryptoCoins.UWP.Models.UserPreferences"
+    xmlns:stateTrigger="using:CryptoCoins.UWP.Platform.StateTrigger"
+    mc:Ignorable="d"
+    DataContext="{Binding Settings, Source={StaticResource Locator}}">
+<views:MvvmPage.Resources>
+    <Style x:Key="NormalHyperlinkStyle" TargetType="HyperlinkButton">
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Style="{StaticResource BaseTextBlockStyle}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    </views:MvvmPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            x:Uid="SettingsPage_Title"
+            x:Name="TitlePage" Style="{StaticResource PageTitleStyle}" Margin="{StaticResource PageTitleFullMargin}" />
+        <ScrollViewer Grid.Row="1" Padding="{StaticResource LeftRightMargin}" VerticalAlignment="Stretch"
+                      VerticalScrollMode="Auto">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <StackPanel>
+                        <TextBlock x:Uid="SettingsPage_Currencies" Margin="0,12,0,0" />
+                        <ItemsControl Margin="-4,0" ItemsSource="{x:Bind ViewModel.Currencies, Mode=OneWay}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="userPreferences:CurrencyPreference">
+                                    <CheckBox Margin="4" Content="{x:Bind Code}" MinWidth="72"
+                                              IsChecked="{x:Bind IsShown, Mode=TwoWay}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+
+                    <ToggleSwitch x:Uid="SettingsPage_AutoSyncToggle" Margin="0,16,0,0" IsOn="{x:Bind ViewModel.IsAutoSyncEnabled, Mode=TwoWay}"/>
+                    <TextBlock Text="{x:Bind ViewModel.SyncStatus, Mode=OneWay}"/>
+                    <Button x:Uid="SettingsPage_SyncButton" Margin="0,8,0,0" Command="{x:Bind ViewModel.SyncNowCommand}"/>
+
+                    <StackPanel Margin="0,16,0,0">
+                        <TextBlock
+                            x:Uid="SettingsPage_Theme" />
+
+                        <RadioButton Margin="0,4,0,0" x:Uid="SettingsPage_ThemeLight" GroupName="Theme">
+                            <RadioButton.IsChecked>
+                                <Binding Path="Theme" Converter="{StaticResource RadioConverter}" Mode="TwoWay">
+                                    <Binding.ConverterParameter>
+                                        <ElementTheme>Light</ElementTheme>
+                                    </Binding.ConverterParameter>
+                                </Binding>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
+                        <RadioButton x:Uid="SettingsPage_ThemeDark" GroupName="Theme">
+                            <RadioButton.IsChecked>
+                                <Binding Path="Theme" Converter="{StaticResource RadioConverter}" Mode="TwoWay">
+                                    <Binding.ConverterParameter>
+                                        <ElementTheme>Dark</ElementTheme>
+                                    </Binding.ConverterParameter>
+                                </Binding>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
+                        <RadioButton x:Uid="SettingsPage_ThemeDefault" GroupName="Theme">
+                            <RadioButton.IsChecked>
+                                <Binding Path="Theme" Converter="{StaticResource RadioConverter}" Mode="TwoWay">
+                                    <Binding.ConverterParameter>
+                                        <ElementTheme>Default</ElementTheme>
+                                    </Binding.ConverterParameter>
+                                </Binding>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
+                    </StackPanel>
+
+                    <ComboBox Margin="0,16,0,0" x:Uid="SettingsPage_Language"
+                              MinWidth="200"
+                              ItemsSource="{x:Bind ViewModel.Languages}"
+                              SelectedValue="{x:Bind ViewModel.SelectedLanguage, Mode=TwoWay}"
+                              DisplayMemberPath="Description" />
+
+                    <HyperlinkButton x:Uid="SettingsPage_RateApp" Margin="0,16,0,0"
+                                     NavigateUri="ms-windows-store://review/?ProductId=9nwrp455hswh" Style="{StaticResource NormalHyperlinkStyle}"/>
+                    <TextBlock x:Uid="SettingsPage_RateAppCaption"
+                               TextWrapping="WrapWholeWords" Style="{StaticResource CaptionTextBlockStyle}"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
+                    <HyperlinkButton x:Uid="SettingsPage_ContactDeveloper" Margin="0,16,0,0" Command="{x:Bind ViewModel.ContactDeveloperCommand}"
+                                     Style="{StaticResource NormalHyperlinkStyle}"/>
+                    <TextBlock x:Uid="SettingsPage_ContactDeveloperDescription"
+                               TextWrapping="WrapWholeWords" Style="{StaticResource CaptionTextBlockStyle}"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
+                    <HyperlinkButton x:Uid="SettingsPage_GiveFeedback" Margin="0,16,0,0" Command="{x:Bind ViewModel.GiveFeedbackCommand}"
+                                     Visibility="{x:Bind ViewModel.IsFeedbackSupported}"
+                                     Style="{StaticResource NormalHyperlinkStyle}"/>
+                    <TextBlock x:Uid="SettingsPage_GiveFeedbackDescription"
+                               Visibility="{x:Bind ViewModel.IsFeedbackSupported}"
+                               TextWrapping="WrapWholeWords" Style="{StaticResource CaptionTextBlockStyle}"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0,16,0,28">
+                    <RichTextBlock
+                        IsTextSelectionEnabled="False" FontSize="12" LineHeight="16" Margin="0,12,0,0">
+                        <Paragraph>
+                            <Run x:Uid="SettingsPage_PoweredBy" />
+                            <Hyperlink x:Uid="SettingsPage_PoweredByLink">
+                                <Run x:Uid="SettingsPage_PoweredByLinkContent" />
+                            </Hyperlink>
+                            <LineBreak />
+                            <Run Text="{x:Bind ViewModel.AppDescription}" />
+                            <LineBreak />
+                            <Run x:Uid="SettingsPage_Copyright" />
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <!--  Adaptive triggers  -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TitlePage.Margin" Value="{StaticResource PageTitleNarrowFullMargin}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="DeviceFamily">
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <stateTrigger:DeviceFamilyTrigger DeviceFamily="Desktop" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Mobile">
+                    <VisualState.StateTriggers>
+                        <stateTrigger:DeviceFamilyTrigger DeviceFamily="Mobile" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</views:MvvmPage>
+
